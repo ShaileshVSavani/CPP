@@ -1,41 +1,47 @@
-/*Q.2 Write a Program to demonstrate an example of hierarchical inheritance to get the square and cube of a number.*/
+/*Q.2 Write a Program to demonstrate an example of hierarchical inheritance to get
+ the square and cube of a number.*/
 
 #include<iostream>
 using namespace std;
 
 class N{
 	protected:
-		int n;
+		int x;
 	public:
 		void setData(){
-			cout<<"Enter n:";
-			cin>>n;
+			cout<<"Enter x:";
+			cin>>x;
 		}
-		void getData(){
-			cout<<"Number is:"<<n<<endl;
-		}
+	
 };
 class S:public N{
+	protected:
+		int y;
 	public:
+		
 	void s(){
-		cout<<"Square is:"<<n*n<<endl;
+		y=x*x;
+		cout<<"Square is:"<<x<<endl;
 	}
 };
 class C:public N{
+	protected:
+		int z;
 	public:
 		void c(){
-		cout<<"Cube is:"<<n*n*n<<endl;
+			z=x*x*x;
+		cout<<"Cube is:"<<z<<endl;
 	}
 };
 int main(){
-	S a;
-	C b;
-	a.setData();
-	a.getData();
-	b.setData();
-	b.getData();
-	a.s();
-	b.c();
+	S s;
+	s.setData();
+	s.s();
+	
+	C c;
+	c.setData();
+	c.c();
+
 	return 0;
 	
 	

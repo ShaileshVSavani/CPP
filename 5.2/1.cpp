@@ -1,17 +1,22 @@
-/*Q.1 Write a Program to overload < operator to find which object contains a higher value from given 2 numbers.*/
-#include<iostream>
-using namespace std;
+/*Q.1 Write a Program to overload < operator to find
+ which object contains a higher value from given 2 numbers.*/
+ 
+ #include <iostream>
+ using namespace std;
 
 class Number {
 private:
     int value;
+
 public:
+	//Number(int val) : value(val) {}
     Number(int val) {
         value = val;
     }
 
-    bool operator<( Number a) {
-        return value <a.value;
+    // Overload the < operator
+    bool operator<( Number &other) {
+        return value <other.value;
     }
 
     int getValue(){
@@ -20,13 +25,13 @@ public:
 };
 
 int main() {
-    Number n1(13);
-    Number n2(11);
+    Number num1(5);
+    Number num2(8);
 
-    if (n1 < n2) {
-        cout << "n2 contains a higher value: " << n2.getValue() <<endl;
+    if (num1 < num2) {
+        cout << "num2 contains a higher value: " << num2.getValue() <<endl;
     } else {
-        cout << "n1 contains a higher value: " << n1.getValue() <<endl;
+        cout << "num1 contains a higher value: " << num1.getValue() <<endl;
     }
 
     return 0;
